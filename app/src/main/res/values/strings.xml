@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LocalContactLoader</string>
+    <string name="text_permission_error">Permission is not granted. Try again</string>
+    <string name="button_try_again">Try again</string>
+    <string name="image_contact_description">Image Contact</string>
+    <string name="image_favorite_description">Image Favorite</string>
+    <string name="default_contact_name">Contact Name</string>
+    <string name="default_phone">0987654321</string>
 </resources>
