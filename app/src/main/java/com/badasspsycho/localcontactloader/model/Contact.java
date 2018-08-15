@@ -1,31 +1,31 @@
 package com.badasspsycho.localcontactloader.model;
 
 public class Contact {
-    private String name;
-    private String phone;
+    private String mName;
+    private String mPhone;
 
     public Contact() {
 
     }
 
     public Contact(String name, String phone) {
-        this.name = name;
-        this.phone = phone;
+        this.mName = name;
+        this.mPhone = phone;
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.mName = name;
     }
 
     public String getPhone() {
-        return phone;
+        return mPhone;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.mPhone = phone;
     }
 }

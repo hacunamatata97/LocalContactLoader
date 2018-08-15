@@ -7,7 +7,7 @@
     tools:context=".view.MainActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_contact"
+        android:id="@+id/recycler_contact"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
@@ -18,7 +18,7 @@
         android:layout_above="@id/button_grant_permission"
         android:gravity="center"
         android:text="@string/text_permission_error"
-        android:textSize="@dimen/error_text_size"
+        android:textSize="@dimen/sp_20"
         android:visibility="gone"/>
 
     <Button

@@ -13,10 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.badasspsycho.localcontactloader.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int READ_CONTACTS_REQUEST = 100;
-    private RecyclerView mContactList;
+    private RecyclerView mRecyclerContacts;
     private Button mButtonRetry;
     private TextView mTextErrorMessage;
 
@@ -40,29 +40,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_grant_permission:
+                requestPermission();
+                break;
+        }
+    }
+
     private void showContactList() {
-        mContactList.setVisibility(View.VISIBLE);
+        mRecyclerContacts.setVisibility(View.VISIBLE);
         mTextErrorMessage.setVisibility(View.GONE);
         mButtonRetry.setVisibility(View.GONE);
     }
 
     private void enableErrorViews() {
-        mContactList.setVisibility(View.GONE);
+        mRecyclerContacts.setVisibility(View.GONE);
         mTextErrorMessage.setVisibility(View.VISIBLE);
         mButtonRetry.setVisibility(View.VISIBLE);
     }
 
     private void initializeViews() {
-        mContactList = findViewById(R.id.list_contact);
+        mRecyclerContacts = findViewById(R.id.recycler_contact);
         mButtonRetry = findViewById(R.id.button_grant_permission);
         mTextErrorMessage = findViewById(R.id.text_permission_error);
 
-        mButtonRetry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requestPermission();
-            }
-        });
+        mButtonRetry.setOnClickListener(this);
     }
 
     private void requestPermission() {
